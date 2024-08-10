@@ -38,12 +38,12 @@ A VAE consists of two main components:
 
 The encoder maps the input data $x$ to a latent variable $z$. Instead of mapping $x$ to a single point in the latent space, the encoder maps $x$ to a distribution over the latent space. This is typically done using a neural network that outputs the mean $\mu$ and the standard deviation $\sigma$ of a Gaussian distribution.
 
-The latent variable $z $is then sampled from this distribution:
+The latent variable $z$ is then sampled from this distribution:
 $$z \sim \mathcal{N}(\mu, \sigma^2) $$
 
 ### Decoder
 
-The decoder maps the latent variable $z $back to the data space to reconstruct the input data $x $. This is also done using a neural network.
+The decoder maps the latent variable $z$ back to the data space to reconstruct the input data $x $. This is also done using a neural network.
 
 ### Loss Function
 
@@ -53,7 +53,7 @@ The loss function of a VAE consists of two parts:
 2. **KL Divergence**: Measures how close the learned latent distribution is to the prior distribution (usually a standard normal distribution).
 
 The total loss is given by:
-$$ \mathcal{L} = \mathbb{E}_{q(z|x)}[\log p(x|z)] - \text{KL}(q(z|x) \| p(z)) $$
+$$\mathcal{L} = \mathbb{E}_{q(z|x)}[\log p(x|z)] - \text{KL}(q(z|x) \| p(z))$$
 
 Where:
 
